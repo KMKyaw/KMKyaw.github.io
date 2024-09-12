@@ -9,31 +9,90 @@
         font-family: Arial, sans-serif;
         margin: 20px;
         padding: 0;
-        color: #000;
+        color: #333;
+        line-height: 1.6;
       }
       header {
         margin-bottom: 20px;
+      }
+      h4 {
+        margin-bottom: 10px;
+        font-size: 1.5em;
       }
       nav {
         margin-bottom: 20px;
       }
       nav a {
         text-decoration: none;
-        color: #000;
+        color: #007bff;
         margin-right: 10px;
       }
       .photo {
         margin-bottom: 20px;
       }
       .photo img {
-        max-width: 50px;
+        max-width: 80px;
         /* border-radius: 50%; */
+      }
+      .social-links {
+        margin-bottom: 10px;
+      }
+      .social-links a {
+        text-decoration: none;
+        color: #004ea1;
+        margin-right: 10px;
+        font-size: 1em;
       }
       footer {
         margin-top: 20px;
         font-size: 0.8em;
+        color: #666;
+      }
+      .collapsible {
+        background-color: #f8f9fa;
+        color: #000;
+        cursor: pointer;
+        padding: 12px;
+        width: 100%;
+        border: 1px solid #ddd;
+        text-align: left;
+        outline: none;
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 5px;
+        border-radius: 5px;
+      }
+      .collapsible:hover,
+      .active {
+        background-color: #e9ecef;
+      }
+      .content {
+        padding: 0 15px;
+        display: none;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .content p {
+        margin: 0;
+      }
+      .collapsible {
+        font-size: 0.9em;
       }
     </style>
+    <script>
+      function toggleCollapse(event) {
+        event.target.classList.toggle("active");
+        var content = event.target.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -43,19 +102,186 @@
     <div class="photo">
       <img src="images/profile.jpg" alt="My Photo" />
     </div>
+
+    <div class="social-links">
+      <a
+        href="https://www.linkedin.com/in/kaung-myat-kyaw-8124ab200/"
+        target="_blank"
+        >LinkedIn</a
+      >
+      <a href="https://www.kaggle.com/kaungmyatkyaw" target="_blank">Kaggle</a>
+    </div>
     <section>
       <h4>About Me</h4>
       <p>
-        This is a brief introduction about myself. I am a student working on
-        exciting projects in my academic career.
+        Undergraduate computer science student with experience in backend
+        development and computer technology projects. I'm always excited to
+        learn new things and ready to work with highly creative people to
+        develop innovative solutions in our community and industries, in which I
+        can apply my knowledge and abilities. Currently, I'm studying at King
+        Mongkut's I
       </p>
+
       <h4>Projects</h4>
+      <ul>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            Quizeo
+          </button>
+          <div class="content">
+            <p>
+              A Flutter application that automatically generates multiple-choice
+              quizzes for YouTube videos. It uses the YouTubeTranscript API,
+              integrates Llama2 7B through Ollama, and is deployed using Flask
+              on a server.
+            </p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            Climate Change Awareness Robot
+          </button>
+          <div class="content">
+            <p>
+              A robot that spreads climate change awareness by initiating
+              conversations with detected persons using GPT-4, Google TTS, and
+              STT models. It is implemented on Raspberry Pi 4 and uses the
+              EfficientDet-Lite0 model for human and gesture recognition.
+            </p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            Storage Management using Computer Vision
+          </button>
+          <div class="content">
+            <p>
+              A portable embedded system for tracking items stored in
+              refrigerators and estimating their expiry dates using a
+              convolutional neural network inspired by VGG Net architecture.
+            </p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            Automated Research Paper Analyzer
+          </button>
+          <div class="content">
+            <p>
+              A system that automatically downloads computer vision-related
+              research papers and analyzes the datasets used. It uses Selenium,
+              LangChain, and GPT-3.5 Turbo for automation and data extraction.
+            </p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            The Polytope Permutation Puzzle
+          </button>
+          <div class="content">
+            <p>
+              A Kaggle competition to solve puzzles (Rubik's Cube, Wreath,
+              Globe) using the Iterative Deepening A* (IDA*) algorithm,
+              achieving a top 5% ranking and a silver medal.
+            </p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            Brain Activity Classification
+          </button>
+          <div class="content">
+            <p>
+              A project to classify brain activities from EEG and Spectrogram
+              data using EfficientNetB0, with regularization and data
+              augmentation techniques to improve robustness.
+            </p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            Academic Data Management System
+          </button>
+          <div class="content">
+            <p>
+              A system for managing university student data, allowing for the
+              addition, deletion, and editing of courses and student records,
+              developed using SQL, React JS, and Express JS.
+            </p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            Reward System for Human Resource Management
+          </button>
+          <div class="content">
+            <p>
+              An application for assigning tasks and rewarding employees based
+              on performance, deployed using AWS Microservices. It won the first
+              runner-up at the AWS Build on Myanmar 2020 Hackathon.
+            </p>
+          </div>
+        </li>
+      </ul>
+
       <h4>Publishments</h4>
       <ul>
         <li>
-          A Framework for Synthetic Audio Conversations Generation using Large
-          Language Models (<a href="./conversaSynth/index.html">Project Page</a
-          >)
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            A Framework for Synthetic Audio Conversations Generation using Large
+            Language Models
+          </button>
+          <div class="content">
+            <p>
+              In this paper, we introduce ConversaSynth, a framework designed to
+              generate synthetic conversation audio using large language models
+              (LLMs) with multiple persona settings. The framework first creates
+              diverse and coherent text-based dialogues across various topics,
+              which are then converted into audio using text-to-speech (TTS)
+              systems. Our experiments demonstrate that ConversaSynth
+              effectively generates high-quality synthetic audio datasets, which
+              can significantly enhance the training and evaluation of models
+              for audio tagging, audio classification, and multi-speaker speech
+              recognition. The results indicate that the synthetic datasets
+              generated by ConversaSynth exhibit substantial diversity and
+              realism, making them suitable for developing robust, adaptable
+              audio-based AI systems.
+            </p>
+            (<a href="./conversaSynth/index.html">Link to Project Page</a>)
+          </div>
+        </li>
+      </ul>
+      <h4>Achievements</h4>
+      <ul>
+        <li>
+          First runner-up award at ASEAN Data Science Explorers National Final
+          2024
+        </li>
+        <li>
+          Academic Excellence Award, School of Information Technology, KMUTT
+          2024
+        </li>
+        <li>
+          Academic Excellence Award, School of Information Technology, KMUTT
+          2023
+        </li>
+        <li>
+          Silver medal for being in the top 5% in The Polytope Permutation
+          Puzzle 2023
+        </li>
+        <li>
+          First prize for Asia-Pacific Telecommunity Young Professionals and
+          Students Innovative Project Challenge 2020
+        </li>
+        <li>First runner-up award for AWS Build on Myanmar 2020 HackAThon</li>
+        <li>Bronze award for Maker-Idea-Thon 2020</li>
+        <li>
+          Champion award for Myanmar STEM Competition 2019 (LegoMindstorms ev3
+          competition)
+        </li>
+        <li>
+          Best Robot Design award for Myanmar STEM Competition 2019
+          (LegoMindstorms ev3 competition)
         </li>
       </ul>
     </section>
