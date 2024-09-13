@@ -13,6 +13,7 @@
         line-height: 1.6;
       }
       header {
+        text-align: center;
         margin-bottom: 20px;
       }
       h4 {
@@ -20,6 +21,7 @@
         font-size: 1.5em;
       }
       nav {
+        text-align: center;
         margin-bottom: 20px;
       }
       nav a {
@@ -28,13 +30,15 @@
         margin-right: 10px;
       }
       .photo {
+        text-align: center;
         margin-bottom: 20px;
       }
       .photo img {
-        max-width: 80px;
-        /* border-radius: 50%; */
+        max-width: 150px; /* Adjust if needed */
+        border-radius: 50%;
       }
       .social-links {
+        text-align: center;
         margin-bottom: 10px;
       }
       .social-links a {
@@ -47,6 +51,7 @@
         margin-top: 20px;
         font-size: 0.8em;
         color: #666;
+        text-align: center;
       }
       .collapsible {
         background-color: #f8f9fa;
@@ -57,7 +62,7 @@
         border: 1px solid #ddd;
         text-align: left;
         outline: none;
-        font-size: 1em;
+        font-size: 0.9em;
         font-weight: bold;
         margin-bottom: 5px;
         border-radius: 5px;
@@ -78,10 +83,12 @@
       .content p {
         margin: 0;
       }
-      .collapsible {
-        font-size: 0.9em;
+      section {
+        max-width: 800px; /* Adjust as needed */
+        margin: 0 auto;
       }
     </style>
+
     <script>
       function toggleCollapse(event) {
         event.target.classList.toggle("active");
@@ -100,7 +107,7 @@
     </header>
 
     <div class="photo">
-      <img src="images/profile.jpg" alt="My Photo" />
+      <img src="static/images/profile.jpg" alt="My Photo" />
     </div>
 
     <div class="social-links">
@@ -109,17 +116,23 @@
         target="_blank"
         >LinkedIn</a
       >
-      <a href="https://www.kaggle.com/kaungmyatkyaw" target="_blank">Kaggle</a>
+      |
+      <a href="static/KM_CV.pdf" target="_blank" style="padding-left: 20px"
+        >CV</a
+      >
     </div>
     <section>
-      <h4>About Me</h4>
       <p>
-        Undergraduate computer science student with experience in backend
-        development and computer technology projects. I'm always excited to
-        learn new things and ready to work with highly creative people to
-        develop innovative solutions in our community and industries, in which I
-        can apply my knowledge and abilities. Currently, I'm studying at King
-        Mongkut's I
+        Kaung Myat Kyaw (nickname: KM) is an undergraduate student studying
+        Computer Science at King Mongkut's University of Technology Thonburi. He
+        was an summer intern at
+        <a href="https://ic2.sit.kmutt.ac.th/"
+          >the Innovative Cognitive Computing (IC2) Research Center</a
+        >. He is involved in multiple research and integration projects related
+        to Large Language Models and Computer Vision. He is currently seeking
+        collaboration opportunities and research internships.
+        <br />
+        <b>Contact</b> - kaungmyat.kyaw@kmutt.ac.th
       </p>
 
       <h4>Projects</h4>
@@ -134,6 +147,18 @@
               quizzes for YouTube videos. It uses the YouTubeTranscript API,
               integrates Llama2 7B through Ollama, and is deployed using Flask
               on a server.
+            </p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleCollapse(event)">
+            Bar Data Trading Simulator
+          </button>
+          <div class="content">
+            <p>
+              A simulator website where users can backtest their trading
+              algorithms. It is implemented using backtrader, Flask and mysql
+              database.
             </p>
           </div>
         </li>
@@ -224,13 +249,21 @@
         </li>
       </ul>
 
-      <h4>Publishments</h4>
+      <h4>Papers</h4>
       <ul>
         <li>
           <button class="collapsible" onclick="toggleCollapse(event)">
             A Framework for Synthetic Audio Conversations Generation using Large
             Language Models
+            <a href="https://arxiv.org/abs/2409.00946" target="_blank"
+              >[arXiv]</a
+            ><a
+              href="https://github.com/KMKyaw/ConversaSynthFrameWork"
+              target="_blank"
+              >[Code]</a
+            >
           </button>
+
           <div class="content">
             <p>
               In this paper, we introduce ConversaSynth, a framework designed to
@@ -247,7 +280,9 @@
               realism, making them suitable for developing robust, adaptable
               audio-based AI systems.
             </p>
-            (<a href="./conversaSynth/index.html">Link to Project Page</a>)
+            (<a href="./conversaSynth/index.html" target="_blank"
+              >Link to Project Page</a
+            >)
           </div>
         </li>
       </ul>
